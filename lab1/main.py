@@ -106,8 +106,7 @@ def main():
     if args.play:
         while True:
             try:
-                print("continue - сделать итерацию"
-                      "end - завершить итерации")
+                print("continue - сделать итерацию", "end - завершить итерации", sep="\n")
                 temp = input()
                 data = FileUtils.read_from_json("./state.json")
                 game = State.get_game_board(data)

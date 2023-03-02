@@ -16,7 +16,7 @@ class GameBoard:
             print()
 
     def __getitem__(self, x):
-        if x >= self.__length or x <= self.__length:
+        if x >= self.__length or x < 0:
             raise Exception("Выход за пределы поля")
         return self.__board[x]
 
@@ -63,12 +63,11 @@ class GameBoard:
                             self.__board[i + move_x][j + move_y].put_entity(plant)
 
     def iteration(self):
-
-        self.move()
-
         for i in range(self.__length):
             for j in range(self.__length):
                 self.__board[i][j].nutrition()
+
+        self.move()
 
         self.plant_reproduction()
 
